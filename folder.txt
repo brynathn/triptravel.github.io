@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>TripTravel</title>
+    <!-- Link CSS -->
+
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../foto/logo.svg">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+</head>
+<body>
+    <!-- HEADER/Navigasi-->
+    <nav class="header">
+        <!-- Logo Brand -->
+        <a class="logo" href="#"><i class="ri-flight-takeoff-line"></i>TripTravel</a>
+            <!-- Navigasi -->
+            <div class="navigation">
+                <div class="mainmenu">
+                    <a href="home.html" class="active">Home</a>
+                    <a href="product.php">Destination</a>
+                    <a href="product.php">About Us</a>
+                    <a href="contact.php">Contact Us</a>
+                </div>
+            </div>
+            <!-- Login Button & Menu -->
+            <div class="main">
+                <a class="user" href="#">Login</a>
+                <div class="bx bx-menu" id="menu-icon"></div>
+            </div>
+    </nav>
+
+    <!-- Slider/Carousel -->
+    
+        <section class="home">
+            <img class="image-slide " src="../foto/swiss.jpg" alt="">
+            <img class="image-slide " src="../foto/foto4.jpg" alt="">
+          
+        
+
+            <div class="content">
+                <h1>Wonderful.<br><span>Island</span></h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita dolore repellat nam culpa! Veniam vel cum eum explicabo asperiores perspiciatis beatae, mollitia sit expedita temporibus repudiandae veritatis atque commodi quam?</p>
+                <a href="#">Read More</a>
+
+
+            <div class="slider-navigation">
+                <div class="nav-btn active"></div>
+                <div class="nav-btn "></div>
+               
+            </div>
+        </section>
+    <!-- Script  -->
+            
+    <script>
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".image-slide");
+        
+            var sliderNav = function(manual){
+                btns.forEach((btn) => {
+                    btn.classList.remove("active");
+                });
+
+                slides.forEach((slide) => {
+                    slide.classList.remove("active");
+                });
+
+             
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+           
+        }
+
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+            });
+        });
+
+    </script>
+
+    <script>
+        let menu = document.querySelector('#menu-icon');
+        let mainmenu = document.querySelector('.mainmenu');
+
+        menu.onclick = () => {
+	        menu.classList.toggle('bx-x');
+	        mainmenu.classList.toggle('open');
+        }
+
+
+    </script>
+</body>
+</html> 
+
+
+
+
+
+
+@font-face {
+  font-family: Poppins-Regular;
+  src: url('../fonts/Poppins/Poppins-Regular.ttf'); 
+}
+
+@font-face {
+  font-family: Poppins-Light;
+  src: url('../fonts/Poppins/Poppins-Light.ttf'); 
+}
+
+@font-face {
+  font-family: Poppins-ExtraLight;
+  src: url('../fonts/Poppins/Poppins-ExtraLight.ttf'); 
+}
+
+@font-face {
+  font-family: Poppins-Medium;
+  src: url('../fonts/Poppins/Poppins-Medium.ttf'); 
+}
+
+@font-face {
+  font-family: Poppins-Italic;
+  src: url('../fonts/Poppins/Poppins-Italic.ttf'); 
+}
+
+@font-face {
+  font-family: Poppins-Bold;
+  src: url('../fonts/Poppins/Poppins-Bold.ttf'); 
+}
+
+@font-face {
+  font-family: Poppins-SemiBold;
+  src: url('../fonts/Poppins/Poppins-SemiBold.ttf'); 
+}
+
+
+/*---------------------------------------------*/
+@font-face {
+  font-family: PlayfairDisplay-Regular;
+  src: url('../fonts/PlayfairDisplay/PlayfairDisplay-Regular.ttf'); 
+}
+
+@font-face {
+  font-family: PlayfairDisplay-Bold;
+  src: url('../fonts/PlayfairDisplay/PlayfairDisplay-Bold.ttf'); 
+}
+
+/*---------------------------------------------*/
+@font-face {
+  font-family: Montserrat-Regular;
+  src: url('../fonts/Montserrat/Montserrat-Regular.ttf'); 
+}
+
+@font-face {
+  font-family: Montserrat-Bold;
+  src: url('../fonts/Montserrat/Montserrat-Bold.ttf'); 
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family:  'poppins', sans-serif;
+}
+
+body{
+  min-height: 100vh;
+  background: #222328;
+  text-decoration: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+.header{
+  display: flex;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  font-family:  Poppins;
+  text-decoration: none;
+  padding: 10px 150px;
+  transition: all .50s ease;
+}
+
+.logo{
+  text-decoration: none;
+  color: #6fe4e8;
+  font-weight: 900;
+  font-size: 1.5rem;
+  align-items: center;
+  text-transform: uppercase;
+  font-family:  'poppins', sans-serif;
+}
+
+.logo:hover{
+  text-decoration: none;
+}
+
+.logo i{
+  color: white;
+  margin-right: 10px;
+  font-size: 35px;
+  text-decoration: none;
+}
+
+.navigation{
+  position: relative;
+  text-decoration: none;
+}
+
+.mainmenu{
+  
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding-top: 5px;
+  text-decoration: none;
+}
+
+.mainmenu a{
+  display: flex;
+  align-items: center;
+  padding: 0px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0px 30px;
+  transition: all .50s ease;
+  color: white;
+  font-family:  'poppins', sans-serif;
+  position: relative;
+  text-decoration: none;
+}
+
+.mainmenu a:hover{
+  text-decoration: none;
+  color: #6fe4e8;
+}
+
+.mainmenu a:before{
+  content: ' ';
+  position: absolute;
+  background: black;
+  width: 0;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  transition: 0.3s ease;
+  text-decoration: none;
+}
+
+.mainmenu a:hover:before{
+  width: 50%;
+  text-decoration: none;
+}
+
+
+
+.main{
+  display: flex;
+  align-items: center;
+  font-family:  'poppins', sans-serif;
+  text-decoration: none;
+}
+
+.main .user{
+  background: white;
+  padding: 5px 30px;
+  border-radius: 12px;
+  color: #0b84f2;
+}
+
+.main a{
+  margin-right: 25px;
+  margin-left: 10px;
+  color: white;
+   font-weight: 500;
+   font-size: 1.2rem;
+   transition: all .50s ease;
+   font-family:  'poppins', sans-serif;
+   
+}
+
+.main a:hover{
+  color:white;
+  text-decoration: none;
+  background:hotpink;
+}
+
+#menu-icon{
+  font-size: 35px;
+  color: white;
+  cursor: pointer;
+  z-index: 10001;
+  display: none;
+}
+
+
+/* SLIDER CONTENT */
+section{
+  padding: 100px 200px;
+}
+
+.home{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: #0b84f2;
+}
+
+.home .content{
+  z-index: 888;
+  color: white;
+  width: 70%;
+  margin-top: 50px;
+  font-family: 'poppins'sans-serif;
+  
+}
+
+.home .content h1{
+  font-size: 4em;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  line-height: 75px;
+  margin-bottom: 40px;
+}
+
+.home .content h1 span{
+  font-size: 1em;
+  font-weight: 600;
+
+}
+
+.home .content p{
+  margin-bottom: 40px;
+  font-weight: 550;
+}
+
+.home .content a{
+  background: white;
+  padding: 15px 35px;
+  border-radius: 12px;
+  font-size: 1em;
+  font-weight: 600;
+  text-decoration: none;
+  color: blue;
+}
+
+.home img{
+  z-index: 000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider-navigation{
+  z-index: 888;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  transform: translateY(160px);
+  transform: translateX(100px);
+  margin-bottom: 12px;
+  align-items: center;
+  align-content: center;
+  padding-left: 50px;
+  padding-top: 40px;
+}
+
+.slider-navigation .nav-btn{
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+  transition: 0.3s ease;
+  
+}
+
+.slider-navigation .nav-btn:not(:last-child){
+  margin-right: 20px;  
+  
+}
+
+.slider-navigation .nav-btn:hover{
+  transform: scale(1.2);
+}
+
+.slider-navigation .nav-btn.active{
+  background: #0b84f2;
+
+}
+
+.image-slide{
+  position: absolute;
+  width: 100%;  
+
+  
+}
+
+.home .image-slide.active{
+  position: absolute;
+  transition: 2s ease;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* RESPONSIVE */
+
+@media(max-width: 1280px){
+  .header{
+    padding: 14px 2%;
+    transition: .2s;
+  }
+
+  .mainmenu a{
+    padding: 5px 0;
+    margin: 0px 2;
+  }
+}
+
+
+
+
+@media (max-width: 1090px){
+  #menu-icon{
+    display: block;
+  }
+
+  .mainmenu{
+    position: absolute;
+    top: 50px;
+    right: 500px;
+    width: 370px;
+    height: 44vh;
+    background: #222328;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 10px;
+    transition: all .50s ease;
+    color: white;
+  }
+
+  .mainmenu a{
+    display: block;
+    margin: 18px 0;
+    padding: 0px 20px;
+    transition: all .50s ease;
+    color: white;
+  }
+
+  .mainmenu a:hover{
+    color:#6fe4e8;
+  }
+
+  .mainmenu a.active{
+    color: #6fe4e8;
+  }
+
+  .mainmenu.open{
+    right: -490px;
+    height: 44vh;
+    display: flex;
+  }
+
+  .mainmenu a:hover{
+    text-decoration: none;
+    color: #6fe4e8;
+  }
+  
+  .mainmenu a:before{
+    content: ' ';
+    position: absolute;
+    background: white;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .mainmenu a:hover:before{
+    width: 100%;
+    margin-top: 10px;
+    text-decoration: none;
+
+  }
+  
+}
+
+
+@media (max-width: 1040px){
+
+  section{
+    padding: 100px 20px;
+    
+  }
+
+  .home{
+    z-index: 888;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease-in-out;
+  }
+
+  .mainmenu{
+    position: absolute;
+    top: 50px;
+    right: 0px;
+    z-index: 1;
+    width: 270px;
+    height: 52vh;
+    background: #222328;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 10px;
+    transition: all .50s ease;
+    color: white;
+  }
+
+  .mainmenu a{
+    display: block;
+    margin: 18px 0;
+    padding: 0px 20px;
+    transition: all .50s ease;
+    color: white;
+  }
+
+  .mainmenu a:hover{
+    color:#6fe4e8;
+  }
+
+  .mainmenu a.active{
+    color: #6fe4e8;
+  }
+
+  .mainmenu.open{
+    right: -450px;
+    height: 45vh;
+  }
+
+  .mainmenu a:hover{
+    text-decoration: none;
+    color: #6fe4e8;
+  }
+  
+  .mainmenu a:before{
+    content: ' ';
+    position: absolute;
+    background: white;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .mainmenu a:hover:before{
+    width: 100%;
+    margin-top: 10px;
+    text-decoration: none;
+
+  }
+  
+}
+
+
+@media (max-width: 950px){
+  .mainmenu{
+    position: absolute;
+    top: 50px;
+    right: 0px;
+    z-index: 1;
+    width: 270px;
+    height: 52vh;
+    background: #222328;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 10px;
+    transition: all .50s ease;
+    color: white;
+  }
+
+  .mainmenu a{
+    display: block;
+    margin: 18px 0;
+    padding: 0px 20px;
+    transition: all .50s ease;
+    color: white;
+  }
+
+  .mainmenu a:hover{
+    color:#6fe4e8;
+  }
+
+  .mainmenu a.active{
+    color: #6fe4e8;
+  }
+
+  .mainmenu.open{
+    right: -330px;
+    height: 45vh;
+  }
+
+  .mainmenu a:hover{
+    text-decoration: none;
+    color: #6fe4e8;
+  }
+  
+  .mainmenu a:before{
+    content: ' ';
+    position: absolute;
+    background: white;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .mainmenu a:hover:before{
+    width: 100%;
+    margin-top: 10px;
+    text-decoration: none;
+
+  }
+  
+}
+
+
+
+@media (max-width: 750px){
+
+
+  .home{
+    z-index: 888;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease-in-out;
+  }
+
+  .mainmenu{
+    position: absolute;
+    top: 50px;
+    right: 0px;
+    z-index: 1;
+    width: 270px;
+    height: 52vh;
+    background: #222328;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 10px;
+    transition: all .50s ease;
+    color: white;
+  }
+
+  .mainmenu a{
+    display: block;
+    margin: 18px 0;
+    padding: 0px 20px;
+    transition: all .50s ease;
+    color: white;
+  }
+
+  .mainmenu a:hover{
+    color:#6fe4e8;
+  }
+
+  .mainmenu a.active{
+    color: #6fe4e8;
+  }
+
+  .mainmenu.open{
+    right: -190px;
+    height: 45vh;
+  }
+
+  .mainmenu a:hover{
+    text-decoration: none;
+    color: #6fe4e8;
+  }
+  
+  .mainmenu a:before{
+    content: ' ';
+    position: absolute;
+    background: white;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .mainmenu a:hover:before{
+    width: 100%;
+    margin-top: 10px;
+    text-decoration: none;
+
+  }
+  
+}
